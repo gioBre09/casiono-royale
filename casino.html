@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino Royale</title>
+    <style>
+        /* General */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            background: #fddb3a;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ffc107;
+        }
+
+        #menu, #slot-machine, #blackjack {
+            display: none;
+        }
+
+        /* Main Menu */
+        #menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Slot Machine */
+        #slot-machine {
+            text-align: center;
+        }
+
+        #slot-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 30px auto;
+        }
+
+        .reel {
+            width: 100px;
+            height: 100px;
+            border: 5px solid #fddb3a;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #444;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .icons {
+            display: flex;
+            flex-direction: column;
+            transform: translateY(0);
+            transition: transform 1s ease-out;
+        }
+
+        .icon {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+        }
+
+        .icon:nth-child(1) { background: #ff6f61; color: #fff; }
+        .icon:nth-child(2) { background: #fddb3a; color: #000; }
+        .icon:nth-child(3) { background: #4facfe; color: #fff; }
+        .icon:nth-child(4) { background: #6a0572; color: #fff; }
+        .icon:nth-child(5) { background: #38ef7d; color: #000; }
+
+        #lever {
+            width: 20px;
+            height: 120px;
+            background: #fff;
+            border: 3px solid #fddb3a;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 0 auto;
+            transform-origin: top center;
+            transform: rotate(0deg);
+            transition: transform 0.3s;
+        }
+
+        #lever:active {
+            transform: rotate(40deg);
+        }
+
+        #slot-message {
+            margin-top: 20px;
+            font-size: 1.5em;
+            min-height: 30px;
+        }
+
+        /* Blackjack */
+        #blackjack {
+            text-align: center;
+        }
+
+        #blackjack-controls {
+            margin-top: 20px;
+        }
+
+        .card {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 15px;
+            background: #fddb3a;
+            color: #000;
+            border-radius: 5px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        #blackjack-message {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+
+        /* Wallet */
+        #wallet {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.2em;
+            background: #fddb3a;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Wallet -->
+    <div id="wallet">💰 Balance: <span id="balance">10</span> coins</div>
+
+    <!-- Main Menu -->
+    <div id="menu">
+        <h1>🎰 Casino Royale 🎲</h1>
+        <button id="slot-btn">Play Slot Machine</button>
+        <button id="blackjack-btn">Play Blackjack</button>
+    </div>
+
+    <!-- Slot Machine -->
+    <div id="slot-machine">
+        <h2>🎰 Slot Machine 🎰</h2>
+        <div id="slot-container">
+            <div class="reel">
+                <div class="icons">
+                    <div class="icon">🍒</div>
+                    <div class="icon">🍋</div>
+                    <div class="icon">🍇</div>
+                    <div class="icon">⭐</div>
+                    <div class="icon">🍉</div>
+                </div>
+            </div>
+            <!-- Other reels here -->
+        </div>
+    </div>
+    <!-- Rest of code unchanged -->
+</body>
+</html>
